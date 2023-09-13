@@ -132,7 +132,7 @@ section {
   animation-timing-function: ease-in-out;
   -webkit-animation-timing-function: ease-in-out;
   animation-iteration-count: 3;
-  -webkit-animation-iteration-count: 5;
+  -webkit-animation-iteration-count: 3;
   cursor: default;
   display: inline-block;
 }
