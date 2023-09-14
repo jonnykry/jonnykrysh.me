@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
-import "./App.css";
-import imgUrl from "./assets/jonny.png";
-import resumeUrl from "./assets/resume.pdf";
+import "./Home.css";
+import imgUrl from "../assets/jonny.png";
+import resumeUrl from "../assets/resume.pdf";
 
 type Link = {
   url: string;
   title: string;
 };
 
-const App = () => {
+const Home = () => {
   const nameLetters = ["j", "o", "n", "n", "y", "gap", "k", "r", "y", "s", "h"];
   const links: Link[] = [
     { url: "mailto:jonnykry93@gmail.com", title: "E-mail" },
@@ -63,4 +63,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

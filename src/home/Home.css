@@ -2,19 +2,19 @@
   font-family: "Roboto Mono";
   font-style: italic;
   src: local("RobotoMono-Italic"),
-    url(./assets/RobotoMono-Italic.ttf) format("truetype");
+    url(../assets/RobotoMono-Italic.ttf) format("truetype");
 }
 @font-face {
   font-family: "Roboto Mono";
   font-style: normal;
   src: local("RobotoMono-Regular"),
-    url(./assets/RobotoMono-Regular.ttf) format("truetype");
+    url(../assets/RobotoMono-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: "Staatliches";
   font-style: normal;
   src: local("Staatliches-Regular"),
-    url(./assets/Staatliches-Regular.ttf) format("truetype");
+    url(../assets/Staatliches-Regular.ttf) format("truetype");
 }
 
 /* Content */
