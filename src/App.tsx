@@ -6,15 +6,21 @@ import resumeUrl from "./assets/resume.pdf";
 type Link = {
   url: string;
   title: string;
+  blank: boolean;
 };
 
 const App = () => {
   const nameLetters = ["j", "o", "n", "n", "y", "gap", "k", "r", "y", "s", "h"];
   const links: Link[] = [
-    { url: "mailto:jonnykry93@gmail.com", title: "E-mail" },
-    { url: resumeUrl, title: "Resume" },
-    { url: "https://www.linkedin.com/in/jonnykry/", title: "LinkedIn" },
-    { url: "https://github.com/jonnykry", title: "GitHub" },
+    { url: "mailto:jonnykry93@gmail.com", title: "E-mail", blank: false },
+    { url: resumeUrl, title: "Resume", blank: false },
+    {
+      url: "https://www.linkedin.com/in/jonnykry/",
+      title: "LinkedIn",
+      blank: false,
+    },
+    { url: "https://github.com/jonnykry", title: "GitHub", blank: false },
+    { url: "/audio-test", title: "Audio Test", blank: false },
   ];
 
   let delay = 0;
@@ -31,7 +37,7 @@ const App = () => {
   const linkElements: ReactElement[] = links.map((link: Link) => {
     return (
       <div className="link-container">
-        <a href={link.url} target="_blank">
+        <a href={link.url} target={link.blank ? "_blank" : "_self"}>
           {link.title}
         </a>
       </div>
