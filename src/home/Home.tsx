@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import './Home.css';
 import imgUrl from '../assets/jonny.png';
 import resumeUrl from '../assets/resume.pdf';
