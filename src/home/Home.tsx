@@ -19,18 +19,25 @@ const Home = () => {
 
   let delay = 0;
   const nameElements: ReactElement[] = nameLetters.map((letter: string) => {
+    const key = `${letter}-${delay}`;
+
     // Add a delay to each letter to stagger animation start time
     delay += 0.12;
+
     return letter === 'gap' ? (
-      <span className='gap'></span>
+      <span key={key} className='gap'></span>
     ) : (
-      <span style={{ animationDelay: `${delay}s` }}>{letter}</span>
+      <span key={key} style={{ animationDelay: `${delay}s` }}>
+        {letter}
+      </span>
     );
   });
 
   const linkElements: ReactElement[] = links.map((link: Link) => {
+    const key = `${link.url}-${link.title}`;
+
     return (
-      <div className='link-container'>
+      <div key={key} className='link-container'>
         <a href={link.url} target='_blank'>
           {link.title}
         </a>
