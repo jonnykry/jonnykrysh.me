@@ -9,7 +9,7 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<anime.AnimeInstance | null>(null);
   const [shouldReset, setShouldReset] = useState(false);
-  const [prevAnimation, setPrevAnimation] = useState(-1);
+  const [animationIdx, setAnimationIdx] = useState(0);
 
   const delayFx = (idx: number, ms: number) => {
     return idx * ms;
@@ -69,8 +69,8 @@ const Header = () => {
     ];
 
     if (!animation) {
-      const randIdx = Math.floor(Math.random() * animations.length);
-      const cfg = animations[randIdx];
+      const cfg = animations[animationIdx % animations.length];
+      setAnimationIdx(animationIdx + 1);
       const animeInstance = anime({
         ...baseAnimation,
         ...cfg,
