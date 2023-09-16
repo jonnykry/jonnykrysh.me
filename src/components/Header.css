@@ -1,7 +1,7 @@
 .header {
   color: #232023;
   font-family: 'Staatliches', cursive;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 0.9;
 }
 
@@ -52,7 +52,7 @@
 
 @media only screen and (min-width: 600px) {
   .header {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 
   .control {
