@@ -9,6 +9,7 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<anime.AnimeInstance | null>(null);
   const [shouldReset, setShouldReset] = useState(false);
+  const [prevAnimation, setPrevAnimation] = useState(-1);
 
   const delayFx = (idx: number, ms: number) => {
     return idx * ms;
@@ -68,21 +69,26 @@ const Header = () => {
       {
         // scale down
         ...baseAnimation,
-        translateY: -30,
-        color: '#00c18e',
+        color: [
+          { value: '#00c18e', easing: 'easeInOutSine', duration: 400 },
+          { value: '#1d1d1d', easing: 'easeInOutSine', duration: 200 },
+        ],
         scale: [
-          { value: 0.1, easing: 'easeOutSine', duration: 200 },
-          { value: 1, easing: 'easeOutSine', duration: 200 },
+          { value: 0.1, easing: 'easeInOutSine', duration: 200 },
+          { value: 1, easing: 'easeInOutSine', duration: 200 },
         ],
         delay: (_el: HTMLElement, i: number) => delayFx(i, 200),
       },
       {
         // scale down rotated
         ...baseAnimation,
-        color: '#0BD6D9',
+        color: [
+          { value: '#0bd6d9', easing: 'easeInOutSine', duration: 400 },
+          { value: '#1d1d1d', easing: 'easeInOutSine', duration: 200 },
+        ],
         scale: [
-          { value: 0.1, easing: 'easeOutSine', duration: 200 },
-          { value: 1, easing: 'easeOutSine', duration: 200 },
+          { value: 0.1, easing: 'easeInOutSine', duration: 200 },
+          { value: 1, easing: 'easeInOutSine', duration: 200 },
         ],
         rotateZ: 360,
         delay: (_el: HTMLElement, i: number) => delayFx(i, 200),
@@ -90,7 +96,14 @@ const Header = () => {
     ];
 
     if (!animation) {
-      const randIdx = Math.floor(Math.random() * animations.length);
+      // Prevent immediate duplicate animations from being picked
+      let randIdx = prevAnimation;
+      while (randIdx === prevAnimation) {
+        randIdx = Math.floor(Math.random() * animations.length);
+      }
+
+      setPrevAnimation(randIdx);
+
       const cfg = animations[randIdx];
       const animeInstance = anime({
         ...baseAnimation,
