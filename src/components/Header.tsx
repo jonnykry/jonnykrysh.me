@@ -66,44 +66,10 @@ const Header = () => {
         easing: 'easeOutSine',
         delay: (_el: HTMLElement, i: number) => delayFx(i, 200),
       },
-      {
-        // scale down
-        ...baseAnimation,
-        color: [
-          { value: '#00c18e', easing: 'easeInOutSine', duration: 400 },
-          { value: '#1d1d1d', easing: 'easeInOutSine', duration: 200 },
-        ],
-        scale: [
-          { value: 0.1, easing: 'easeInOutSine', duration: 200 },
-          { value: 1, easing: 'easeInOutSine', duration: 200 },
-        ],
-        delay: (_el: HTMLElement, i: number) => delayFx(i, 200),
-      },
-      {
-        // scale down rotated
-        ...baseAnimation,
-        color: [
-          { value: '#0bd6d9', easing: 'easeInOutSine', duration: 400 },
-          { value: '#1d1d1d', easing: 'easeInOutSine', duration: 200 },
-        ],
-        scale: [
-          { value: 0.1, easing: 'easeInOutSine', duration: 200 },
-          { value: 1, easing: 'easeInOutSine', duration: 200 },
-        ],
-        rotateZ: 360,
-        delay: (_el: HTMLElement, i: number) => delayFx(i, 200),
-      },
     ];
 
     if (!animation) {
-      // Prevent immediate duplicate animations from being picked
-      let randIdx = prevAnimation;
-      while (randIdx === prevAnimation) {
-        randIdx = Math.floor(Math.random() * animations.length);
-      }
-
-      setPrevAnimation(randIdx);
-
+      const randIdx = Math.floor(Math.random() * animations.length);
       const cfg = animations[randIdx];
       const animeInstance = anime({
         ...baseAnimation,
