@@ -1,3 +1,3 @@
-# jonnykry.github.io
+# jonnykrysh.me
 
 👋😊
