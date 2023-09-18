@@ -2,6 +2,7 @@ import './Home.css';
 import imgUrl from '../assets/jonny.png';
 import resumeUrl from '../assets/resume.pdf';
 import Header from './Header';
+import { useEffect } from 'react';
 
 type Link = {
   url: string;
@@ -15,6 +16,16 @@ const Home = (): JSX.Element => {
     { url: 'https://www.linkedin.com/in/jonnykry/', title: 'LinkedIn' },
     { url: 'https://github.com/jonnykry', title: 'GitHub' },
   ];
+
+  useEffect(() => {
+    const fetchMusic = async () => {
+      const response = await fetch('http://localhost:3000');
+      const responsejson = await response.json();
+      console.log(responsejson);
+    };
+
+    fetchMusic();
+  }, []);
 
   const linkElements: JSX.Element[] = links.map((link: Link) => {
     const key = `${link.url}-${link.title}`;
