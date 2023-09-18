@@ -5,7 +5,7 @@ import './Header.css';
 const NAME = 'jonny krysh';
 const SPACE = ' ';
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<anime.AnimeInstance | null>(null);
   const [shouldReset, setShouldReset] = useState(false);

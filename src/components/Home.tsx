@@ -8,7 +8,7 @@ type Link = {
   title: string;
 };
 
-const Home = () => {
+const Home = (): JSX.Element => {
   const links: Link[] = [
     { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail' },
     { url: resumeUrl, title: 'Resume' },
