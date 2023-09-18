@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import './Home.css';
 import imgUrl from '../assets/jonny.png';
 import resumeUrl from '../assets/resume.pdf';
@@ -17,7 +16,7 @@ const Home = () => {
     { url: 'https://github.com/jonnykry', title: 'GitHub' },
   ];
 
-  const linkElements: ReactElement[] = links.map((link: Link) => {
+  const linkElements: JSX.Element[] = links.map((link: Link) => {
     const key = `${link.url}-${link.title}`;
 
     return (

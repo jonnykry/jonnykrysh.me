@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 import './Header.css';
 
@@ -134,7 +134,7 @@ const Header = () => {
     }
   }, [shouldReset, endless, headerRef.current]);
 
-  const nameElements: ReactElement[] = NAME.split('').map(
+  const nameElements: JSX.Element[] = NAME.split('').map(
     (letter: string, idx: number) => {
       if (letter === SPACE) {
         return <span key={`space-${idx}`} className='space'></span>;
