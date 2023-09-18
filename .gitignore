@@ -12,3 +12,7 @@ dist
 stats.html
 
 .eslintcache
+
+.env
+.env.local
+*.local
