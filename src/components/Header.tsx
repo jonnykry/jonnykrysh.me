@@ -9,6 +9,7 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [animation, setAnimation] = useState<anime.AnimeInstance | null>(null);
   const [shouldReset, setShouldReset] = useState(false);
+  const [endless, setEndless] = useState(false);
   const [animationIdx, setAnimationIdx] = useState(0);
 
   const delayFx = (idx: number, ms: number) => {
@@ -43,6 +44,50 @@ const Header = () => {
         ],
         easing: 'easeInOutSine',
         delay: (_el: HTMLElement, i: number) => delayFx(i, 50),
+      },
+      {
+        // falling, spinning
+        ...baseAnimation,
+        translateY: anime.stagger(25, {
+          from: 'center',
+          axis: 'y',
+        }),
+        rotateZ: anime.stagger(360, {
+          from: 'center',
+          axis: 'x',
+        }),
+        color: '#0BD968',
+        delay: anime.stagger(200, { from: 'center' }),
+        easing: 'easeInOutQuad',
+      },
+      {
+        // coinflip
+        ...baseAnimation,
+        rotateY: 180,
+        keyframes: [
+          { color: '#1d1d1d' },
+          { color: '#0bd968' },
+          {
+            color: '#1d1d1d',
+          },
+        ],
+        direction: 'alternate',
+        easing: 'easeInQuad',
+      },
+      {
+        // disorient
+        ...baseAnimation,
+        rotateX: 180,
+        keyframes: [
+          { color: '#1d1d1d' },
+          { color: '#00c18e' },
+          {
+            color: '#1d1d1d',
+          },
+        ],
+        direction: 'alternate',
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(200, { from: 'center' }),
       },
       {
         // spin
@@ -81,12 +126,13 @@ const Header = () => {
         // Clean up previous animations each time, enabling rerun button
         anime.remove(headerRef.current ? headerRef.current.children : []);
         setAnimation(null);
+        endless && setShouldReset(true);
       });
 
       setAnimation(animeInstance);
       setShouldReset(false);
     }
-  }, [shouldReset, headerRef.current]);
+  }, [shouldReset, endless, headerRef.current]);
 
   const nameElements: ReactElement[] = NAME.split('').map(
     (letter: string, idx: number) => {
@@ -112,13 +158,28 @@ const Header = () => {
       <div className='header wavy' ref={headerRef}>
         {nameElements}
       </div>
-      <button
-        className='control'
-        style={{ visibility: animation ? 'hidden' : 'visible' }}
-        onClick={onReset}
-      >
-        Go Again!
-      </button>
+      <div className='controls'>
+        <>
+          <button
+            className='control'
+            style={{
+              visibility: animation || endless ? 'hidden' : 'visible',
+            }}
+            onClick={onReset}
+          >
+            Go Again!
+          </button>
+          <button
+            className='control'
+            style={{
+              visibility: animation || endless ? 'hidden' : 'visible',
+            }}
+            onClick={() => setEndless(true)}
+          >
+            Endless
+          </button>
+        </>
+      </div>
     </div>
   );
 };
