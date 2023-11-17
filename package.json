@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
-    "serve": "bun src/server/index.ts",
-    "build": "bunx --bun tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -27,8 +27,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "typescript": "^5.0.2"
   },
   "module": "index.ts"
 }
