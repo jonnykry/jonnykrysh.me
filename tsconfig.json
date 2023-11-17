@@ -29,7 +29,7 @@
     ]
   },
   "include": [
-    "./src",
+    "./app",
     "./next-env.d.ts",
     "./dist/types/**/*.ts",
     ".next/types/**/*.ts"
