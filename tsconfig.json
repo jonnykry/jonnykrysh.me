@@ -20,6 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "plugins": [
       {
@@ -27,6 +28,11 @@
       }
     ]
   },
-  "include": ["app", ".next/types/**/*.ts"],
+  "include": [
+    "./src",
+    "./next-env.d.ts",
+    "./dist/types/**/*.ts",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
