@@ -12,7 +12,7 @@ type Link = {
 const Home = (): JSX.Element => {
   const links: Link[] = [
     { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail' },
-    { url: '/assets/pdfs/myResume.pdf', title: 'Resume' },
+    { url: '/resume.pdf', title: 'Resume' },
     { url: 'https://www.linkedin.com/in/jonnykry/', title: 'LinkedIn' },
     { url: 'https://github.com/jonnykry', title: 'GitHub' },
   ];
