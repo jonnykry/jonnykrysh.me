@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 import anime from 'animejs/lib/anime.es.js';
 import './Header.css';
@@ -6,8 +8,8 @@ const NAME = 'jonny krysh';
 const SPACE = ' ';
 
 const Header = (): JSX.Element => {
-  const headerRef = useRef<HTMLDivElement>(null);
-  const [animation, setAnimation] = useState<anime.AnimeInstance | null>(null);
+  const animation = useRef<anime.AnimeInstance | null>(null);
+  const [isRunning, setIsRunning] = useState(true);
   const [shouldReset, setShouldReset] = useState(false);
   const [endless, setEndless] = useState(false);
   const [animationIdx, setAnimationIdx] = useState(0);
@@ -113,26 +115,29 @@ const Header = (): JSX.Element => {
       },
     ];
 
-    if (!animation) {
+    if (!animation.current) {
       const cfg = animations[animationIdx % animations.length];
       setAnimationIdx(animationIdx + 1);
       const animeInstance = anime({
         ...baseAnimation,
         ...cfg,
-        targets: headerRef?.current?.children || [],
+        targets: '.wavy-text',
       });
 
       animeInstance.finished.then(() => {
-        // Clean up previous animations each time, enabling rerun button
-        anime.remove(headerRef.current ? headerRef.current.children : []);
-        setAnimation(null);
-        endless && setShouldReset(true);
+        animation.current = null;
+        if (!endless) {
+          setIsRunning(false);
+        } else {
+          setShouldReset(true);
+        }
       });
 
-      setAnimation(animeInstance);
+      animation.current = animeInstance;
       setShouldReset(false);
+      setIsRunning(true);
     }
-  }, [shouldReset, endless, headerRef.current]);
+  }, [shouldReset, endless]);
 
   const nameElements: JSX.Element[] = NAME.split('').map(
     (letter: string, idx: number) => {
@@ -155,15 +160,13 @@ const Header = (): JSX.Element => {
 
   return (
     <div className='header-container'>
-      <div className='header wavy' ref={headerRef}>
-        {nameElements}
-      </div>
+      <div className='header wavy'>{nameElements}</div>
       <div className='controls'>
         <>
           <button
             className='control'
             style={{
-              visibility: animation || endless ? 'hidden' : 'visible',
+              visibility: isRunning || endless ? 'hidden' : 'visible',
             }}
             onClick={onReset}
           >
@@ -172,7 +175,7 @@ const Header = (): JSX.Element => {
           <button
             className='control'
             style={{
-              visibility: animation || endless ? 'hidden' : 'visible',
+              visibility: isRunning || endless ? 'hidden' : 'visible',
             }}
             onClick={() => setEndless(true)}
           >

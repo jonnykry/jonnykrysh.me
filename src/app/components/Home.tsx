@@ -1,6 +1,7 @@
+'use client';
+
 import './Home.css';
-import imgUrl from '../assets/jonny.png';
-import resumeUrl from '../assets/resume.pdf';
+import image from '../assets/jonny.png';
 import Header from './Header';
 
 type Link = {
@@ -11,7 +12,7 @@ type Link = {
 const Home = (): JSX.Element => {
   const links: Link[] = [
     { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail' },
-    { url: resumeUrl, title: 'Resume' },
+    { url: '/resume.pdf', title: 'Resume' },
     { url: 'https://www.linkedin.com/in/jonnykry/', title: 'LinkedIn' },
     { url: 'https://github.com/jonnykry', title: 'GitHub' },
   ];
@@ -33,7 +34,7 @@ const Home = (): JSX.Element => {
       <section className='hero-container'>
         <Header />
         <div className='img-container'>
-          <img src={imgUrl} alt='A portrait of Jonny Krysh' />
+          <img src={image.src} alt='A portrait of Jonny Krysh' />
         </div>
         <div className='hero'>
           <div>
