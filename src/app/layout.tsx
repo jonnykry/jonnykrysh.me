@@ -23,7 +23,7 @@ export default function RootLayout({
           name='google-site-verification'
           content='Z6gkGqIhfSVq8CAIaWuPPk9bygmylU3OucrKiORZlfs'
         />{' '}
-        {/* TODO: Next.js Metadata replacement for this? */}
+        {/* TODO: Next.js Metadata replacement for this */}
       </head>
       <body>
         <div id='root'>{children}</div>
