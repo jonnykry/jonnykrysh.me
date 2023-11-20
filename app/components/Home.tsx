@@ -7,14 +7,20 @@ import Header from './Header';
 type Link = {
   url: string;
   title: string;
+  target?: string;
 };
 
 const Home = (): JSX.Element => {
   const links: Link[] = [
-    { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail' },
-    { url: '/resume.pdf', title: 'Resume' },
-    { url: 'https://www.linkedin.com/in/jonnykry/', title: 'LinkedIn' },
-    { url: 'https://github.com/jonnykry', title: 'GitHub' },
+    { url: '/blog', title: 'Blog' },
+    { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail', target: '_blank' },
+    { url: '/resume.pdf', title: 'Resume', target: '_blank' },
+    {
+      url: 'https://www.linkedin.com/in/jonnykry/',
+      title: 'LinkedIn',
+      target: '_blank',
+    },
+    { url: 'https://github.com/jonnykry', title: 'GitHub', target: '_blank' },
   ];
 
   const linkElements: JSX.Element[] = links.map((link: Link) => {
@@ -22,7 +28,7 @@ const Home = (): JSX.Element => {
 
     return (
       <div key={key} className='link-container'>
-        <a href={link.url} target='_blank'>
+        <a href={link.url} target={link.target || ''}>
           {link.title}
         </a>
       </div>
