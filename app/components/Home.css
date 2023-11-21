@@ -3,18 +3,21 @@
   font-style: italic;
   src: local('RobotoMono-Italic'),
     url(/RobotoMono-Italic.ttf) format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Roboto Mono';
   font-style: normal;
   src: local('RobotoMono-Regular'),
     url(/RobotoMono-Regular.ttf) format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Staatliches';
   font-style: normal;
   src: local('Staatliches-Regular'),
     url(/Staatliches-Regular.ttf) format('truetype');
+  font-display: swap;
 }
 
 /* Content */
@@ -79,7 +82,7 @@ section {
 }
 
 .links-container a {
-  color: #8fa88a;
+  color: #697b64;
 }
 
 .links-container a:hover {

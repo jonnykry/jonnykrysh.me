@@ -160,7 +160,7 @@ const Header = (): JSX.Element => {
 
   return (
     <div className='header-container'>
-      <div className='header wavy'>{nameElements}</div>
+      <header className='wavy'>{nameElements}</header>
       <div className='controls'>
         <>
           <button
