@@ -1,8 +1,9 @@
 'use client';
 
 import './Home.css';
-import image from '../assets/jonny.png';
+import image from '../assets/jonny.webp';
 import Header from './Header';
+import Image from 'next/image';
 
 type Link = {
   url: string;
@@ -30,27 +31,31 @@ const Home = (): JSX.Element => {
   });
 
   return (
-    <>
-      <section className='hero-container'>
-        <Header />
-        <div className='img-container'>
-          <img src={image.src} alt='A portrait of Jonny Krysh' />
+    <section className='hero-container'>
+      <Header />
+      <div className='img-container'>
+        <Image
+          src={image.src}
+          alt='A portrait of Jonny Krysh'
+          width={200}
+          height={200}
+          unoptimized
+        />
+      </div>
+      <div className='hero'>
+        <div>
+          Software engineer with over 6-years of professional experience
         </div>
-        <div className='hero'>
-          <div>
-            Software engineer with over 6-years of professional experience
-          </div>
-          <div className='haiku'>
-            Keen eye for pixels
-            <br />
-            Passion for frontend web tech
-            <br />
-            Searching for next role
-          </div>
-          <div className='links-container'>{linkElements}</div>
+        <div className='haiku'>
+          Keen eye for pixels
+          <br />
+          Passion for frontend web tech
+          <br />
+          Searching for next role
         </div>
-      </section>
-    </>
+        <div className='links-container'>{linkElements}</div>
+      </div>
+    </section>
   );
 };
 

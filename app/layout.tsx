@@ -26,7 +26,7 @@ export default function RootLayout({
         {/* TODO: Next.js Metadata replacement for this */}
       </head>
       <body>
-        <div id='root'>{children}</div>
+        <main id='root'>{children}</main>
       </body>
     </html>
   );
