@@ -1,14 +1,14 @@
 import Link from 'next/link';
 
-export default function Page({ props }: any) {
-  console.log(props);
-
+export default function Page() {
   return (
     <div>
-      Blog
-      <div>
-        <Link href='/blog/posts/test.html'>Post 1</Link>
-      </div>
+      <h1>Blog</h1>
+      <ul>
+        <li>
+          <Link href='/blog/test'>Post 1</Link>
+        </li>
+      </ul>
     </div>
   );
 }

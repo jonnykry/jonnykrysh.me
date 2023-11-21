@@ -18,3 +18,5 @@ stats.html
 .env
 .env.local
 *.local
+
+test.mdx
