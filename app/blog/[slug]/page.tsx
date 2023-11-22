@@ -6,7 +6,7 @@ import { getMDXComponent } from 'mdx-bundler/client';
 
 const getPostData = async (slug: string) => {
   const blogPostContent = await fs.readFile(
-    process.cwd() + `/app/blog/[slug]/${slug}.mdx`,
+    process.cwd() + `/_posts/${slug}.mdx`,
     'utf8'
   );
 
@@ -22,8 +22,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const BlogPost = getMDXComponent(result.code);
 
   return (
-    <div>
-      <BlogPost></BlogPost>
-    </div>
+    <BlogPost />
   );
 }

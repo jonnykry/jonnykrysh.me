@@ -4,6 +4,7 @@ import './Home.css';
 import image from '../assets/jonny.webp';
 import Header from './Header';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Link = {
   url: string;
@@ -29,18 +30,20 @@ const Home = (): JSX.Element => {
 
     return (
       <div key={key} className='link-container'>
-        <a href={link.url} target={link.target || ''}>
+        <Link href={link.url} target={link.target || ''}>
           {link.title}
-        </a>
+        </Link>
       </div>
     );
   });
 
   return (
-    <section className='hero-container'>
+    <section className='items-center flex flex-col justify-center text-center h-screen'>
       <Header />
-      <div className='img-container'>
+      <div className='w-32
+      \ h-32 border-1 border-gray-950 rounded-full block'>
         <Image
+          className='w-32 h-32 border-1 rounded-full'
           src={image.src}
           alt='A portrait of Jonny Krysh'
           width={200}

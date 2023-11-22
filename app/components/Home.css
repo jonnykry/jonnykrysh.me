@@ -22,28 +22,6 @@
 
 /* Content */
 
-html,
-body {
-  height: 100vh;
-  margin: 0;
-}
-
-#root {
-  height: 100vh;
-}
-
-.hero-container {
-  align-items: center;
-  background-color: #e4f5e1;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  height: 100vh;
-  justify-content: center;
-  text-align: center;
-}
-
 .haiku {
   font-size: 0.8em;
   font-style: italic;
@@ -79,10 +57,6 @@ section {
 .links-container {
   display: flex;
   justify-content: center;
-}
-
-.links-container a {
-  color: #697b64;
 }
 
 .links-container a:hover {

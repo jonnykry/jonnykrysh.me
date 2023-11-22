@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-header {
+.wavy {
   color: #232023;
   font-family: 'Staatliches', cursive;
   font-size: 4rem;

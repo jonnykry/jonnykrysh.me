@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jonnykrysh.me'),
@@ -16,17 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='h-screen m-0 bg-emerald-100'>
       <head>
         <link rel='manifest' href='/site.webmanifest' />
         <meta
           name='google-site-verification'
           content='Z6gkGqIhfSVq8CAIaWuPPk9bygmylU3OucrKiORZlfs'
-        />{' '}
-        {/* TODO: Next.js Metadata replacement for this */}
+        />
       </head>
-      <body>
-        <main id='root'>{children}</main>
+      <body className='h-screen m-0'>
+        <main id='root' className='h-screen'>
+          {children}
+        </main>
       </body>
     </html>
   );
