@@ -2,7 +2,7 @@
 
 import './Home.css';
 import image from '../assets/jonny.webp';
-import Header from './Header';
+import AnimatedHeader from './AnimatedHeader';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -38,8 +38,8 @@ const Home = (): JSX.Element => {
   });
 
   return (
-    <section className='items-center flex flex-col justify-center text-center h-screen'>
-      <Header />
+    <section className='items-center flex flex-col justify-center text-center h-screen font-roboto'>
+      <AnimatedHeader />
       <div className='w-32
       \ h-32 border-1 border-gray-950 rounded-full block'>
         <Image
@@ -55,7 +55,7 @@ const Home = (): JSX.Element => {
         <div>
           Software engineer with over 6-years of professional experience
         </div>
-        <div className='haiku'>
+        <div className='italic text-sm'>
           Keen eye for pixels
           <br />
           Passion for frontend web tech

@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import anime from 'animejs/lib/anime.es.js';
-import './Header.css';
+import './AnimatedHeader.css';
 
 const NAME = 'jonny krysh';
 const SPACE = ' ';
 
-const Header = (): JSX.Element => {
+const AnimatedHeader = (): JSX.Element => {
   const animation = useRef<anime.AnimeInstance | null>(null);
   const [isRunning, setIsRunning] = useState(true);
   const [shouldReset, setShouldReset] = useState(false);
@@ -142,12 +142,12 @@ const Header = (): JSX.Element => {
   const nameElements: JSX.Element[] = NAME.split('').map(
     (letter: string, idx: number) => {
       if (letter === SPACE) {
-        return <span key={`space-${idx}`} className='space'></span>;
+        return <span key={`space-${idx}`} className='inline-block cursor-default px-1 md:px-3 inline-block sm:text-6xl md:text-8xl xl:text-9xl'></span>;
       }
 
       const key = `${letter}-${idx}`;
       return (
-        <span key={key} className='wavy-text'>
+        <span key={key} className='font-staatliches inline-block cursor-default wavy-text sm:text-6xl md:text-8xl xl:text-9xl'>
           {letter}
         </span>
       );
@@ -160,31 +160,29 @@ const Header = (): JSX.Element => {
 
   return (
     <div className='header-container'>
-      <header className='wavy'>{nameElements}</header>
-      <div className='controls'>
-        <>
-          <button
-            className='control'
-            style={{
-              visibility: isRunning || endless ? 'hidden' : 'visible',
-            }}
-            onClick={onReset}
-          >
-            Go Again!
-          </button>
-          <button
-            className='control'
-            style={{
-              visibility: isRunning || endless ? 'hidden' : 'visible',
-            }}
-            onClick={() => setEndless(true)}
-          >
-            Endless
-          </button>
-        </>
+      <div className='wavy'>{nameElements}</div>
+      <div className='flex self-end py-2'>
+        <button
+          className='control'
+          style={{
+            visibility: isRunning || endless ? 'hidden' : 'visible',
+          }}
+          onClick={onReset}
+        >
+          Go Again!
+        </button>
+        <button
+          className='control'
+          style={{
+            visibility: isRunning || endless ? 'hidden' : 'visible',
+          }}
+          onClick={() => setEndless(true)}
+        >
+          Endless
+        </button>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default AnimatedHeader;

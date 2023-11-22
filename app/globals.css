@@ -1,4 +1,4 @@
-/*@tailwind base;
+@tailwind base;
 
 @layer base {
   h1 {
@@ -17,9 +17,31 @@
     @apply text-inherit;
   }
   ul {
-    @apply list-disc
+    @apply list-disc;
   }
-}*/
+}
 
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  src: local('RobotoMono-Italic'),
+    url(/RobotoMono-Italic.ttf) format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  src: local('RobotoMono-Regular'),
+    url(/RobotoMono-Regular.ttf) format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Staatliches';
+  font-style: normal;
+  src: local('Staatliches-Regular'),
+    url(/Staatliches-Regular.ttf) format('truetype');
+  font-display: swap;
+}
