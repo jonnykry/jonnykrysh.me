@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import './globals.css'
+import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jonnykrysh.me'),

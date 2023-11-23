@@ -142,12 +142,20 @@ const AnimatedHeader = (): JSX.Element => {
   const nameElements: JSX.Element[] = NAME.split('').map(
     (letter: string, idx: number) => {
       if (letter === SPACE) {
-        return <span key={`space-${idx}`} className='inline-block cursor-default px-1 md:px-3 inline-block sm:text-6xl md:text-8xl xl:text-9xl'></span>;
+        return (
+          <span
+            key={`space-${idx}`}
+            className='inline-block cursor-default px-1 md:px-3 inline-block text-6xl md:text-8xl xl:text-9xl'
+          ></span>
+        );
       }
 
       const key = `${letter}-${idx}`;
       return (
-        <span key={key} className='font-staatliches inline-block cursor-default wavy-text sm:text-6xl md:text-8xl xl:text-9xl'>
+        <span
+          key={key}
+          className='font-staatliches inline-block cursor-default wavy-text text-6xl md:text-8xl xl:text-9xl'
+        >
           {letter}
         </span>
       );

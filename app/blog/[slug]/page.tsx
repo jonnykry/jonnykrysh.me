@@ -3,6 +3,7 @@
 import { promises as fs } from 'fs';
 import { bundleMDX } from 'mdx-bundler';
 import { getMDXComponent } from 'mdx-bundler/client';
+import Link from 'next/link';
 
 const getPostData = async (slug: string) => {
   const blogPostContent = await fs.readFile(
@@ -14,14 +15,37 @@ const getPostData = async (slug: string) => {
     source: blogPostContent,
   });
 
-  return { code: result.code, fallback: false };
+  return {
+    code: result.code,
+    frontmatter: result.frontmatter,
+    fallback: false,
+  };
 };
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const result = await getPostData(params.slug);
   const BlogPost = getMDXComponent(result.code);
+  const frontmatter = (
+    <div className='italic'>
+      <div>{result.frontmatter.description}</div>
+      <div className='flex gap-2'>
+        {result.frontmatter.tags.map((tag: string) => (
+          <div key={tag}>{`#${tag}`}</div>
+        ))}
+      </div>
+      <br />
+      <div>{result.frontmatter.date.toDateString()}</div>
+    </div>
+  );
 
   return (
-    <BlogPost />
+    <div className='prose prose-quoteless py-10'>
+      <Link href='/blog'>&larr; All Blog Posts</Link>
+      <h1 className='pt-5'>{result.frontmatter.title}</h1>
+      {frontmatter}
+      <BlogPost />
+      <hr className='my-5' />
+      <Link href='/blog'>&larr; All Blog Posts</Link>
+    </div>
   );
 }

@@ -7,11 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        quoteless: {
+          css: {
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
+            'blockquote p:first-of-type': { fontWeight: '400' },
+          },
+        },
+      },
       fontFamily: {
         roboto: ['Roboto Mono', 'monospace'],
         staatliches: ['Staatliches', 'cursive'],
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

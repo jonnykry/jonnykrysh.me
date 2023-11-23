@@ -40,10 +40,12 @@ const Home = (): JSX.Element => {
   return (
     <section className='items-center flex flex-col justify-center text-center h-screen font-roboto'>
       <AnimatedHeader />
-      <div className='w-32
-      \ h-32 border-1 border-gray-950 rounded-full block'>
+      <div
+        className='w-32
+      \ h-32 border-1 my-5 rounded-full block'
+      >
         <Image
-          className='w-32 h-32 border-1 rounded-full'
+          className='w-32 h-32 border-1 border-2 object-cover border-gray-950 aspect-auto rounded-full'
           src={image.src}
           alt='A portrait of Jonny Krysh'
           width={200}
