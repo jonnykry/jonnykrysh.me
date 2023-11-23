@@ -1,0 +1,71 @@
+---
+date: 2023-11-21
+title: Just Read the Code
+description: Musings on the most important lesson of my career – "just read the code"
+tags:
+  - musing
+  - programming
+  - mentorship
+---
+
+One of the most important lessons passed down to me early in my career by my manager at Microsoft was: "**read the code**."
+
+Admittedly, it sounds a bit silly writing that down… shouldn't that come intuitively as engineers? Yet still, I encounter many (even myself) forgetting or refusing to accept this advice.
+
+As an exercise, think back to a Reddit, LinkedIn, or HackerNews thread sharing a news article. How often do you find yourself reading the article, then going to the comments only to realize that 90% of those commenting have blatantly not read the article? If you're anything like me, this is something you see _all the time_. Relating this to the post at hand: as engineers, we should seek to avoid this as a parallel within our codebases and the way we talk about our systems.
+
+The advice of just "read the code" has long lasted with me and continues to be my most valuable lesson.
+
+When I first started at Microsoft working on Azure Cosmos DB (in 2017), I found it challenging to debug vast distributed systems. One common approach to diagnosing anything was to query telemetry to learn about software running in production. However, this can lead to misrepresentations and misunderstandings compared to what's actually written. It's important to understand both the code that's written and what it does…
+
+… but _how do you do that_?
+
+## Methods for Reading Code
+
+There are many tools and resources to read code, but I'm going to describe my general approach, in hopes engineers entering their career can see the light as I did:
+
+- **Create a block diagram of the critical code paths and their key interfaces.**
+
+  This can be done on pen and paper (maybe the most recommended, as [the age-old adage goes](https://www.jstor.org/stable/356095)). Other tools for your block diagram could be: [Whimsical](https://whimsical.com/), [tldraw](https://www.tldraw.com/), [Excalidraw](https://excalidraw.com/)
+
+  Identifying these code paths can be done using reference maps in any code editor. In Visual Studio Code, when you encounter a function or method, right click and "Find All References" to help build this.
+
+- **With that block diagram, highlight key focus areas and what you don't understand.**
+
+  Create multiple [black boxes](https://en.wikipedia.org/wiki/Black_box) from the code and allow abstraction to carry you in the beginning. Describe "what does this interface or layer take in, and what does it output? generally speaking, what action does it have on the system?"
+
+  This will be a "black box" and should be higher-level than one function or method. Mark down what doesn't make sense and continue forward for later.
+
+- **Write what the code does within each diagram in _plain english_.**
+
+  This is where you should be diving into the previous functions and methods. Go line-by-line and try to really grasp what's happening in this code. If it's too hard to understand, again, highlight this for later or try to black box it. This can be as simple as: "takes X input and turns it into Y output."
+
+- **Set local debuggers to analyze variables and data within classes and code paths to help minimize black boxes.**
+- **Read Unit Tests on specific sections – do the unit tests match your understanding? Can you set debuggers from unit tests to learn it's functionality deeper?**
+- **Ask coworkers (or folks working on the project if open source) to help you understand. The more specific you can be, and the deeper their understanding is, the more productive this conversation will be.**
+
+> **_Note:_** it's worth mentioning that what you're studying _might be incorrect_. There could be bugs, suboptimal solutions, or many other things that you discover. **That's okay**. The goal here is not to tear down the work of the giants before you, but to _learn_ and reduce mountains of abstraction.
+
+> **_Note note:_** Something important here is to learn your third-party libraries as well. If you're using [Formik](https://formik.org/) – how do you use Formik, per their documentation? What does Formik do? The crux of all of this is to not let our assumptions drive our knowledge, but to let concreteness and ground truths build our worldview.
+
+Not only will these methods help improve _your_ understanding of the code, but they will be instrumental for the success of your _team_. No more assumptions about what that code path is doing – you _know_ what the code does, even when it's functioning in a way that goes against beliefs, and you will gain insights on how to improve.
+
+The best part about this is when new folks join your team, you harness the ability to share this newfound knowledge with them. You are rendered able to provide mentorship and guidance, all because you **read the code**.
+
+This of course becomes less of a necessity if you **wrote the code**!
+
+## Summary
+
+Reading the code, while a bit pretentious or silly, is honest advice. This can bring you out of holes you might find yourself throughout your career.
+
+Take the time and deep work to learn what your system is doing.
+
+Nowadays, you could dump your entire codebase into ChatGPT and have it do all the hard work of reading, but I suspect a lot of your code is not open source and I don't actually recommend you do this under a [Privacy Policy that regularly changes](https://openai.com/policies/privacy-policy). Thus, it becomes more important for humans continue their own improvement and ability to read & write code.
+
+> That said… ChatGPT can be instrumental in reducing the quantities of black boxes. I use it often to take massive complexities and break them down into their sub-components, so if you can make use of it in a privacy-conscious capacity, I highly recommend it!
+
+I still regularly apply "**read the code**" and I hope this helps you adopt the same!
+
+What processes do you apply for establishing stronger confidence in a newly adopted codebase?
+
+How do you charter the unfamiliar?
