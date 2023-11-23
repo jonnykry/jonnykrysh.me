@@ -3,28 +3,6 @@
   flex-direction: column;
 }
 
-header {
-  color: #232023;
-  font-family: 'Staatliches', cursive;
-  font-size: 4rem;
-  line-height: 0.9;
-}
-
-.space {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-.wavy span {
-  cursor: default;
-  display: inline-block;
-}
-
-.controls {
-  display: flex;
-  align-self: flex-end;
-}
-
 .control {
   align-self: flex-end;
   background: #f2edf5;

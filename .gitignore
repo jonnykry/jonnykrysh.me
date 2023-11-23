@@ -18,6 +18,3 @@ stats.html
 .env
 .env.local
 *.local
-
-app/blog
-test.mdx

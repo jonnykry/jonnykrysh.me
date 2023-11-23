@@ -1,48 +1,4 @@
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: italic;
-  src: local('RobotoMono-Italic'),
-    url(/RobotoMono-Italic.ttf) format('truetype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  src: local('RobotoMono-Regular'),
-    url(/RobotoMono-Regular.ttf) format('truetype');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Staatliches';
-  font-style: normal;
-  src: local('Staatliches-Regular'),
-    url(/Staatliches-Regular.ttf) format('truetype');
-  font-display: swap;
-}
-
 /* Content */
-
-html,
-body {
-  height: 100vh;
-  margin: 0;
-}
-
-#root {
-  height: 100vh;
-}
-
-.hero-container {
-  align-items: center;
-  background-color: #e4f5e1;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  height: 100vh;
-  justify-content: center;
-  text-align: center;
-}
 
 .haiku {
   font-size: 0.8em;
@@ -79,10 +35,6 @@ section {
 .links-container {
   display: flex;
   justify-content: center;
-}
-
-.links-container a {
-  color: #697b64;
 }
 
 .links-container a:hover {

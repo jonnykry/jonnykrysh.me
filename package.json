@@ -2,7 +2,6 @@
   "name": "jonnykry.me",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,21 +10,26 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "mdx-bundler": "^10.0.1",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/animejs": "^3.1.7",
     "@types/express": "^4.17.17",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "autoprefixer": "^10.4.16",
     "bun-types": "latest",
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
     "typescript": "^5.0.2"
   }
 }
