@@ -35,16 +35,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </div>
       <br />
       <div>{result.frontmatter.date.toDateString()}</div>
+      <hr className='my-10 border-gray-400' />
     </div>
   );
 
   return (
-    <div className='prose prose-quoteless py-10'>
+    <div className='prose prose-zinc prose-quoteless py-10'>
       <Link href='/blog'>&larr; All Blog Posts</Link>
       <h1 className='pt-5'>{result.frontmatter.title}</h1>
       {frontmatter}
       <BlogPost />
-      <hr className='my-5' />
+      <hr className='my-10 border-gray-400' />
       <Link href='/blog'>&larr; All Blog Posts</Link>
     </div>
   );
