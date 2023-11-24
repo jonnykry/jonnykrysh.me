@@ -32,15 +32,6 @@ section {
   width: 100px;
 }
 
-.links-container {
-  display: flex;
-  justify-content: center;
-}
-
-.links-container a:hover {
-  color: #1d1d1d;
-}
-
 .link-container {
   padding: 0 10px;
   height: 0;

@@ -25,15 +25,13 @@ const Home = (): JSX.Element => {
     { url: 'https://github.com/jonnykry', title: 'GitHub', target: '_blank' },
   ];
 
-  const linkElements: JSX.Element[] = links.map((link: Link) => {
+  const linkElements: JSX.Element[] = links.map((link: Link, idx: number) => {
     const key = `${link.url}-${link.title}`;
 
     return (
-      <div key={key} className='link-container'>
-        <Link href={link.url} target={link.target || ''}>
-          {link.title}
-        </Link>
-      </div>
+      <Link key={key} href={link.url} target={link.target || ''}>
+        {link.title}
+      </Link>
     );
   });
 
@@ -64,7 +62,9 @@ const Home = (): JSX.Element => {
           <br />
           Searching for next role
         </div>
-        <div className='links-container'>{linkElements}</div>
+        <div className='flex justify-center flex-wrap gap-5'>
+          {linkElements}
+        </div>
       </div>
     </section>
   );
