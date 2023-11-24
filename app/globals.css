@@ -19,6 +19,9 @@
   ul {
     @apply list-disc;
   }
+  a {
+    @apply cursor-pointer;
+  }
 }
 
 @tailwind components;
