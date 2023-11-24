@@ -25,7 +25,7 @@ const Home = (): JSX.Element => {
     { url: 'https://github.com/jonnykry', title: 'GitHub', target: '_blank' },
   ];
 
-  const linkElements: JSX.Element[] = links.map((link: Link, idx: number) => {
+  const linkElements: JSX.Element[] = links.map((link: Link) => {
     const key = `${link.url}-${link.title}`;
 
     return (
