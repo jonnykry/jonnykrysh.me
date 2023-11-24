@@ -14,7 +14,8 @@ type Link = {
 
 const Home = (): JSX.Element => {
   const links: Link[] = [
-    { url: '/blog', title: 'Blog' },
+    // Remove for now until blog is working
+    /*{ url: '/blog', title: 'Blog' },*/
     { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail', target: '_blank' },
     { url: '/resume.pdf', title: 'Resume', target: '_blank' },
     {
