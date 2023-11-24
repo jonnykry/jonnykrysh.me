@@ -1,11 +1,9 @@
-'use server';
-
 import { promises as fs } from 'fs';
 import path from 'path';
 import Link from 'next/link';
 
 const getPosts = async () => {
-  const postsDirectory = path.join(process.cwd(), '/app/_posts');
+  const postsDirectory = path.join(process.cwd(), 'app', '_posts');
   const files = await fs.readdir(postsDirectory);
 
   return {

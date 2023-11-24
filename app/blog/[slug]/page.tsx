@@ -1,5 +1,3 @@
-'use server';
-
 import { promises as fs } from 'fs';
 import { bundleMDX } from 'mdx-bundler';
 import { getMDXComponent } from 'mdx-bundler/client';
