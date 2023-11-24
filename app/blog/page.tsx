@@ -5,7 +5,7 @@ import path from 'path';
 import Link from 'next/link';
 
 const getPosts = async () => {
-  const postsDirectory = path.join(process.cwd(), '_posts');
+  const postsDirectory = path.join(process.cwd(), 'posts');
   const files = await fs.readdir(postsDirectory);
 
   return {
