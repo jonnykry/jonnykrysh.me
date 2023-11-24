@@ -1,11 +1,12 @@
 import { promises as fs } from 'fs';
+import path from 'path';
 import { bundleMDX } from 'mdx-bundler';
 import { getMDXComponent } from 'mdx-bundler/client';
 import Link from 'next/link';
 
 const getPostData = async (slug: string) => {
   const blogPostContent = await fs.readFile(
-    process.cwd() + `/app/_posts/${slug}.mdx`,
+    process.cwd() + path.resolve(`/app/_posts/${slug}.mdx`),
     'utf8'
   );
 
