@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const getPostData = async (slug: string) => {
   const blogPostContent = await fs.readFile(
-    process.cwd() + `/_posts/${slug}.mdx`,
+    process.cwd() + `/posts/${slug}.mdx`,
     'utf8'
   );
 
