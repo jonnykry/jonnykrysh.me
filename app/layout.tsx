@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className='h-screen m-0 bg-emerald-100'>
+    <html lang='en' className='m-0 p-0 w-full h-full'>
       <head>
         <link rel='manifest' href='/site.webmanifest' />
         <meta
@@ -25,8 +25,8 @@ export default function RootLayout({
           content='Z6gkGqIhfSVq8CAIaWuPPk9bygmylU3OucrKiORZlfs'
         />
       </head>
-      <body className='h-screen m-0'>
-        <main id='root' className='h-screen'>
+      <body className='m-0 p-0 w-full h-full flex flex-col flex-1'>
+        <main id='root' className='flex-auto'>
           {children}
         </main>
       </body>

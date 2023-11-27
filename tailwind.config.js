@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       typography: {
-        quoteless: {
+        DEFAULT: {
           css: {
             'blockquote p:first-of-type::before': { content: 'none' },
             'blockquote p:first-of-type::after': { content: 'none' },
@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         roboto: ['Roboto Mono', 'monospace'],
-        staatliches: ['Staatliches', 'cursive'],
+        staatliches: ['Staatliches', 'arial', 'sans-serif'],
       },
     },
   },

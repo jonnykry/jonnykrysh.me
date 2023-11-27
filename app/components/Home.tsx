@@ -36,7 +36,7 @@ const Home = (): JSX.Element => {
   });
 
   return (
-    <section className='items-center flex flex-col justify-center text-center h-screen font-roboto'>
+    <section className='bg-emerald-100 items-center flex flex-col justify-center text-center h-screen font-roboto'>
       <AnimatedHeader />
       <div
         className='w-32

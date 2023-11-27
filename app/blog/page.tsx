@@ -30,8 +30,8 @@ export default async function Page() {
   });
 
   return (
-    <div className='min-w-full mt-10'>
-      <h1 className='text-6xl font-staatliches mb-5'>Blog Entries</h1>
+    <div className='mt-10'>
+      <h1 className='text-5xl font-staatliches mb-5'>Blog Entries</h1>
       <ul className='list-disc pl-5'>
         {blogPosts}
         <li>... more coming soon!</li>

@@ -39,13 +39,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <div className='prose prose-zinc prose-quoteless py-10'>
+    <article className=' max-w-3xl prose prose-emerald prose-overrides prose-li:marker:text-emerald-700 prose-blockquote:border-l-slate-700 prose-blockquote:bg-slate-100 prose-blockquote:p-4 py-10 px-10'>
       <Link href='/blog'>&larr; All Blog Posts</Link>
       <h1 className='pt-5'>{result.frontmatter.title}</h1>
       {frontmatter}
       <BlogPost />
       <hr className='my-10 border-gray-400' />
       <Link href='/blog'>&larr; All Blog Posts</Link>
-    </div>
+    </article>
   );
 }
