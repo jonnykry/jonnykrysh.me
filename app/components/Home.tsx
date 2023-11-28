@@ -60,7 +60,7 @@ const Home = (): JSX.Element => {
           <br />
           Searching for next role
         </div>
-        <div className='flex justify-center flex-wrap gap-5'>
+        <div className='flex justify-center flex-wrap gap-3 md:gap-5'>
           {linkElements}
         </div>
       </div>
