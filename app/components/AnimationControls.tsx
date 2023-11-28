@@ -25,48 +25,47 @@ const AnimationControls = ({
   return (
     <div className='flex self-end py-2 gap-2 justify-end items-center'>
       <label className='text-gray-400 text-sm'>Animation Controls:</label>
-      {!isRepeating && (
-        <button
-          className={buttonClass}
-          onClick={
-            isRunning ? () => handlePauseClick() : () => handlePlayClick()
-          }
-        >
-          {isRunning && !isPaused ? (
+      {!isRepeating ? (
+        <>
+          <button
+            className={buttonClass}
+            onClick={
+              isRunning ? () => handlePauseClick() : () => handlePlayClick()
+            }
+          >
+            {isRunning && !isPaused ? (
+              <Image
+                className='h-5 w-5 sm:w-5 sm:h-5'
+                src='/pause.svg'
+                height={50}
+                width={50}
+                alt={'Pause name animation'}
+              />
+            ) : (
+              <Image
+                className='h-5 w-5 sm:w-5 sm:h-5 '
+                src='/play.svg'
+                height={50}
+                width={50}
+                alt={'Re-run name animation'}
+              />
+            )}
+          </button>
+          <button
+            className={buttonClass}
+            disabled={isRunning}
+            onClick={() => handleRepeatClick()}
+          >
             <Image
               className='h-5 w-5 sm:w-5 sm:h-5'
-              src='/pause.svg'
+              src='/repeat.svg'
               height={50}
               width={50}
-              alt={'Pause name animation'}
+              alt={'Endless name animations'}
             />
-          ) : (
-            <Image
-              className='h-5 w-5 sm:w-5 sm:h-5 '
-              src='/play.svg'
-              height={50}
-              width={50}
-              alt={'Re-run name animation'}
-            />
-          )}
-        </button>
-      )}
-      {!isRepeating && (
-        <button
-          className={buttonClass}
-          disabled={isRunning}
-          onClick={() => handleRepeatClick()}
-        >
-          <Image
-            className='h-5 w-5 sm:w-5 sm:h-5'
-            src='/repeat.svg'
-            height={50}
-            width={50}
-            alt={'Endless name animations'}
-          />
-        </button>
-      )}
-      {isRepeating && (
+          </button>
+        </>
+      ) : (
         <>
           <button className={buttonClass} onClick={() => handlePauseClick()}>
             {isPaused ? (
@@ -87,7 +86,11 @@ const AnimationControls = ({
               />
             )}
           </button>
-          <button className={buttonClass} onClick={() => handleStopClick()}>
+          <button
+            className={buttonClass}
+            disabled={isPaused}
+            onClick={() => handleStopClick()}
+          >
             <Image
               className='h-5 w-5 sm:w-5 sm:h-5'
               src='/square.svg'
