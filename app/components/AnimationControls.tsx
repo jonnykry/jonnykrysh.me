@@ -21,10 +21,13 @@ const AnimationControls = ({
 }: AnimationControlsProps) => {
   const buttonClass =
     'rounded-lg bg-violet-600 hover:bg-violet-500 disabled:bg-violet-300 p-2';
+  const imageClass = 'h-3 w-3 md:w-5 md:h-5';
 
   return (
-    <div className='flex self-end py-2 gap-2 justify-end items-center'>
-      <label className='text-gray-400 text-sm'>Animation Controls:</label>
+    <div className='flex self-end py-2 gap-2 justify-end items-center mt-2'>
+      <label className='text-gray-400 text-sm md:text-md'>
+        Animation Controls:
+      </label>
       {!isRepeating ? (
         <>
           <button
@@ -35,7 +38,7 @@ const AnimationControls = ({
           >
             {isRunning && !isPaused ? (
               <Image
-                className='h-5 w-5 sm:w-5 sm:h-5'
+                className={imageClass}
                 src='/pause.svg'
                 height={50}
                 width={50}
@@ -43,7 +46,7 @@ const AnimationControls = ({
               />
             ) : (
               <Image
-                className='h-5 w-5 sm:w-5 sm:h-5 '
+                className={imageClass}
                 src='/play.svg'
                 height={50}
                 width={50}
@@ -57,7 +60,7 @@ const AnimationControls = ({
             onClick={() => handleRepeatClick()}
           >
             <Image
-              className='h-5 w-5 sm:w-5 sm:h-5'
+              className={imageClass}
               src='/repeat.svg'
               height={50}
               width={50}
@@ -70,7 +73,7 @@ const AnimationControls = ({
           <button className={buttonClass} onClick={() => handlePauseClick()}>
             {isPaused ? (
               <Image
-                className='h-5 w-5 sm:w-5 sm:h-5 '
+                className={imageClass}
                 src='/play.svg'
                 height={50}
                 width={50}
@@ -78,7 +81,7 @@ const AnimationControls = ({
               />
             ) : (
               <Image
-                className='h-5 w-5 sm:w-5 sm:h-5'
+                className={imageClass}
                 src='/pause.svg'
                 height={50}
                 width={50}
@@ -92,7 +95,7 @@ const AnimationControls = ({
             onClick={() => handleStopClick()}
           >
             <Image
-              className='h-5 w-5 sm:w-5 sm:h-5'
+              className={imageClass}
               src='/square.svg'
               height={50}
               width={50}
