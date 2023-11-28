@@ -1,7 +1,5 @@
 'use client';
 
-import './Home.css';
-import image from '../assets/jonny.webp';
 import AnimatedHeader from './AnimatedHeader';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -44,18 +42,18 @@ const Home = (): JSX.Element => {
       >
         <Image
           className='w-32 h-32 border-1 border-2 object-cover border-gray-950 aspect-auto rounded-full'
-          src={image.src}
+          src='jonny.webp'
           alt='A portrait of Jonny Krysh'
           width={200}
           height={200}
           unoptimized
         />
       </div>
-      <div className='hero'>
-        <div>
+      <div className='hero px-5'>
+        <div className='py-5'>
           Software engineer with over 6-years of professional experience
         </div>
-        <div className='italic text-sm'>
+        <div className='pb-5 italic text-sm'>
           Keen eye for pixels
           <br />
           Passion for frontend web tech
