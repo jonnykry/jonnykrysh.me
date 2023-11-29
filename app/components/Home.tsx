@@ -32,7 +32,7 @@ const Home = (): JSX.Element => {
         key={key}
         href={link.url}
         target={link.target || ''}
-        prefetch={link.prefetch || true}
+        prefetch={link.prefetch === undefined ? true : link.prefetch}
       >
         {link.title}
       </Link>
