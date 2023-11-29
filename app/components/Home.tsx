@@ -8,13 +8,14 @@ type Link = {
   url: string;
   title: string;
   target?: string;
+  prefetch?: boolean;
 };
 
 const Home = (): JSX.Element => {
   const links: Link[] = [
     { url: '/blog', title: 'Blog' },
     { url: 'mailto:jonnykry93@gmail.com', title: 'E-mail', target: '_blank' },
-    { url: '/resume.pdf', title: 'Resume', target: '_blank' },
+    { url: '/resume.pdf', title: 'Resume', target: '_blank', prefetch: false },
     {
       url: 'https://www.linkedin.com/in/jonnykry/',
       title: 'LinkedIn',
@@ -27,7 +28,12 @@ const Home = (): JSX.Element => {
     const key = `${link.url}-${link.title}`;
 
     return (
-      <Link key={key} href={link.url} target={link.target || ''}>
+      <Link
+        key={key}
+        href={link.url}
+        target={link.target || ''}
+        prefetch={link.prefetch || true}
+      >
         {link.title}
       </Link>
     );
