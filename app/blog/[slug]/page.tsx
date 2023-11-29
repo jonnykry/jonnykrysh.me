@@ -3,8 +3,9 @@ import path from 'path';
 import { bundleMDX } from 'mdx-bundler';
 import { getMDXComponent } from 'mdx-bundler/client';
 import Link from 'next/link';
+import { cache } from 'react';
 
-const getPostData = async (slug: string) => {
+const getPostData = cache(async (slug: string) => {
   const blogPostContent = await fs.readFile(
     process.cwd() + path.resolve(`/app/_posts/${slug}.mdx`),
     'utf8'
@@ -19,7 +20,7 @@ const getPostData = async (slug: string) => {
     frontmatter: result.frontmatter,
     fallback: false,
   };
-};
+});
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const result = await getPostData(params.slug);
