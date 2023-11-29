@@ -10,7 +10,7 @@ const SocialMediaLinks = () => {
         target='_blank'
       >
         <Image
-          className='h-5 w-5 sm:w-5 sm:h-5'
+          className='h-5 w-5'
           src='/mail.svg'
           height={50}
           width={50}
@@ -23,7 +23,7 @@ const SocialMediaLinks = () => {
         target='_blank'
       >
         <Image
-          className='h-5 w-5 sm:w-5 sm:h-5'
+          className='h-5 w-5'
           src='/linkedin.svg'
           height={50}
           width={50}
@@ -36,7 +36,7 @@ const SocialMediaLinks = () => {
         target='_blank'
       >
         <Image
-          className='h-5 w-5 sm:w-5 sm:h-5'
+          className='h-5 w-5'
           src='/github.svg'
           height={50}
           width={50}
