@@ -42,7 +42,7 @@ const Home = (): JSX.Element => {
       >
         <Image
           className='w-32 h-32 border-1 border-2 object-cover border-gray-950 aspect-auto rounded-full'
-          src='jonny.webp'
+          src='/jonny.webp'
           alt='A portrait of Jonny Krysh'
           width={200}
           height={200}
