@@ -20,12 +20,12 @@ const AnimationControls = ({
   handleStopClick,
 }: AnimationControlsProps) => {
   const buttonClass =
-    'rounded-lg bg-violet-600 hover:bg-violet-500 disabled:bg-violet-300 p-2';
+    'rounded-lg bg-green-600 hover:bg-green-500 disabled:bg-green-300 p-2';
   const imageClass = 'h-3 w-3 md:w-5 md:h-5';
 
   return (
-    <div className='flex self-end py-2 gap-2 justify-end items-center mt-2'>
-      <label className='text-gray-400 text-sm md:text-md'>
+    <div className='flex self-end py-3 gap-3 justify-center items-center mt-2'>
+      <label className='text-gray-500 text-sm md:text-md'>
         Animation Controls:
       </label>
       {!isRepeating ? (
