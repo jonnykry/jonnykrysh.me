@@ -30,7 +30,7 @@ export default async function Page() {
   });
 
   return (
-    <div className='mt-10'>
+    <div className='self-center max-w-3xl w-full'>
       <h1 className='text-5xl font-staatliches mb-5'>Blog Entries</h1>
       <ul className='list-disc pl-5'>
         {blogPosts}

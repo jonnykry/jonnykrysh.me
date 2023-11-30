@@ -1,16 +1,19 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-const SocialMediaLinks = () => {
+export default function SocialMediaLinks() {
+  const linkClasses = 'no-underline text-black';
   return (
     <>
       <Link
-        className='no-underline text-black'
+        className={linkClasses}
         href='mailto:jonnykry93@gmail.com'
         target='_blank'
       >
         <Image
-          className='h-5 w-5'
+          className='h-5 w-5 text-black'
           src='/mail.svg'
           height={50}
           width={50}
@@ -18,7 +21,7 @@ const SocialMediaLinks = () => {
         />
       </Link>
       <Link
-        className='no-underline text-black'
+        className={linkClasses}
         href='https://www.linkedin.com/in/jonnykry/'
         target='_blank'
       >
@@ -31,7 +34,7 @@ const SocialMediaLinks = () => {
         />
       </Link>
       <Link
-        className='no-underline text-black'
+        className={linkClasses}
         href='https://github.com/jonnykry'
         target='_blank'
       >
@@ -45,6 +48,4 @@ const SocialMediaLinks = () => {
       </Link>
     </>
   );
-};
-
-export default SocialMediaLinks;
+}
