@@ -1,7 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import Link from 'next/link';
-import { LoadingSpinner } from '../components/LoadingSpinner';
 
 const getPosts = async () => {
   const postsDirectory = path.join(process.cwd(), 'app', '_posts');
