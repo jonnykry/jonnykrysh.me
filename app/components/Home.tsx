@@ -60,7 +60,6 @@ const buildAnimations = (baseAnimation: AnimationSubset) => {
           color: '#1d1d1d',
         },
       ],
-      direction: 'alternate',
       easing: 'easeInQuad',
     },
     {
@@ -74,7 +73,6 @@ const buildAnimations = (baseAnimation: AnimationSubset) => {
           color: '#1d1d1d',
         },
       ],
-      direction: 'alternate',
       easing: 'easeInOutQuad',
       delay: anime.stagger(200, { from: 'center' }),
     },
@@ -153,7 +151,7 @@ const Home = (): JSX.Element => {
       const animeInstance = anime({
         ...baseAnimation,
         ...cfg,
-        targets: '#wavy-text',
+        targets: '#wavyText',
       });
 
       animeInstance.finished.then(() => {
@@ -187,7 +185,7 @@ const Home = (): JSX.Element => {
         return (
           <span
             key={key}
-            id='wavy-text'
+            id='wavyText'
             className='font-staatliches inline-block cursor-default text-7xl md:text-9xl xl:text-[9rem]'
           >
             {letter}
