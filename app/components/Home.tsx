@@ -243,16 +243,12 @@ const Home = (): JSX.Element => {
         />
       </div>
       <div className='hero px-5'>
-        <div className='py-5'>
-          Software engineer with over 6-years of professional experience
-        </div>
-        <div className='pb-5 italic text-sm'>
-          Keen eye for pixels
+        <div>
+          Software engineer with a keen eye for pixels
           <br />
-          Passion for frontend web tech
-          <br />
-          Searching for next role
+          and strong passion for web technologies
         </div>
+        <div className='py-5'>Currently working @ Adobe</div>
         <div className='flex justify-center flex-wrap gap-3 md:gap-5'>
           {linkElements}
         </div>
